@@ -9,7 +9,8 @@ export default function (state = DEFAULT_STATE, action) {
     switch (action.type) {
         case types.GET_ALL_TODOS:
             console.log('get all todos: ', action.payload);
-            return state;
+            //middleware working
+            return { ...state, all: action.payload.data.todos };
         default:
             return state;
     }
