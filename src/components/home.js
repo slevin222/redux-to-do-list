@@ -10,10 +10,14 @@ class Home extends Component {
     }
 
     render() {
-        console.log("Props:", this.props);
+
         const listItems = this.props.todoList.map((item, index) => {
-            return <li className="list-group-item" key={index}>{item.title}</li>
-        })
+            return (
+                <li className="list-group-item" key={index}>
+                    <Link to={`item/${item._id}`}>{item.title}</Link>
+                </li>
+            );
+        });
 
 
         return (

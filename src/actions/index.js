@@ -22,3 +22,11 @@ export function addItem(item) {
 
     };
 }
+
+export function getOneItem(id) {
+    const request = axios.get(`${BASE_URL}/todos/${id + API_KEY}`);
+    return {
+        type: types.GET_ONE_ITEM,
+        payload: request
+    }
+}
