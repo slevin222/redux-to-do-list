@@ -2,7 +2,7 @@ import types from './types';
 import axios from 'axios';
 
 const BASE_URL = 'http://api.reactprototypes.com';
-const API_KEY = '?key=testuser1234';
+const API_KEY = '?key=shawn1234';
 
 export function getAllTodos() {
     const request = axios.get(`${BASE_URL}/todos${API_KEY}`);
@@ -21,4 +21,12 @@ export function addItem(item) {
         payload: request
 
     };
+}
+
+export function getOneItem(id) {
+    const request = axios.get(`${BASE_URL}/todos/${id + API_KEY}`);
+    return {
+        type: types.GET_ONE_ITEM,
+        payload: request
+    }
 }

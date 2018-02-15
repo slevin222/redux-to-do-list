@@ -18,16 +18,14 @@ class AddForm extends Component {
     }
 
     handleAddItem(values) {
-        console.log(" adding items :", values);
         this.props.addItem(values).then(() => {
-            console.log('item added to server');
             this.props.history.push('/');
         });
     }
 
 
     render() {
-        console.log('ADD form props ', this.props)
+        // console.log('ADD form props ', this.props)
         return (
             <form onSubmit={this.props.handleSubmit(this.handleAddItem.bind(this))}>
                 <h1 className="text-center">Add To Do item</h1>
