@@ -11,17 +11,29 @@ class ViewItem extends Component {
 
 
     render() {
-        // console.log('view item ', this.props)
+        console.log('view item ', this.props.item);
+        const needToComplete = (this.props.item.complete) ? "Yes" : "No";
         return (
             <div>
-                <h1 className="text-center">
-                    View item details
-                </h1>
-                <div className="row justify-content-end">
-                    <Link className="btn btn-outline-primary" to="/">Return</Link>
+                <h2 className="text-center">View item details</h2>
+                <div className="row justify-content-center">
+                    <div className="card">
+                        <div class="card-body">
+                            <div className="col sm-6 lg-9 justify-content-center">
+                                <br />
+                                <h4 className="card-title">{this.props.item.title}</h4>  <br />
+                                <p className="card-subtitle mb-2 text-muted">ID: {this.props.match.params.id}</p>
+                                <p className="card-text">Info : {this.props.item.details}</p>
+                                <p className="card-text">Completed : {needToComplete}</p>
+                                <p className="card-text">Created : {this.props.item.created}</p>
+                                <Link className="btn btn-outline-primary btn-sm mr-3" to="/">Return</Link>
+                                <Link className="btn btn-outline-success btn-sm mr-3" to="/">Complete</Link>
+                                <Link className="btn btn-outline-danger btn-sm" to="/">Delete</Link><br />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p>ID: {this.props.match.params.id}</p>
-                <h3>Title: {this.props.item.title}</h3>
             </div>
         )
     }

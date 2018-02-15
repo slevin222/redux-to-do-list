@@ -29,9 +29,6 @@ class AddForm extends Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.handleAddItem.bind(this))}>
                 <h1 className="text-center">Add To Do item</h1>
-                <div className="row justify-content-end" >
-                    <Link className="btn btn-outline-primary" to="/">Go Back</Link>
-                </div>
                 <div className="row justify-content-center">
                     <div className="col-6">
                         <Field name="title" label="Title" component={this.renderInput} />
@@ -39,6 +36,7 @@ class AddForm extends Component {
                         <div className="row justify-content-end">
                             <button onClick={this.props.reset} type='button' className='btn btn-outline-danger mr-3'>Reset</button>
                             <button className='btn btn-outline-success mr-3' >Add item</button>
+                            <Link className="btn btn-outline-primary mr-3" to="/">Go Back</Link>
                         </div>
                     </div>
                 </div>
