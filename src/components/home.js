@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { getAllTodos } from '../actions';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
 
@@ -17,11 +18,15 @@ class Home extends Component {
 
         return (
             <div>
+
                 <div className="text-center">
                     <h1>To Do List</h1>
                     <p>Now with Redux!</p>
                 </div>
-                <ul className="list-group">
+                <div className="row justify-content-end my-4">
+                    <Link className="btn btn-outline-primary" to="/add-item">Add Item</Link>
+                </div>
+                <ul className="row list-group">
                     {listItems}
                 </ul>
             </div>

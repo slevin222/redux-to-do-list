@@ -13,3 +13,12 @@ export function getAllTodos() {
     };
 
 }
+
+export function addItem(item) {
+    const request = axios.post(`${BASE_URL}/todos${API_KEY}`, item);
+    return {
+        type: types.ADD_ITEM,
+        payload: request
+
+    };
+}
