@@ -23,17 +23,16 @@ class AddForm extends Component {
         });
     }
 
-
     render() {
-        // console.log('ADD form props ', this.props)
+        console.log('ADD form props ', this.props)
         return (
             <form onSubmit={this.props.handleSubmit(this.handleAddItem.bind(this))}>
                 <h1 className="text-center">Add To Do item</h1>
                 <div className="row justify-content-center">
-                    <div className="col-6">
+                    <div className="col-10 col-sm-10 col-md-6">
                         <Field name="title" label="Title" component={this.renderInput} />
                         <Field name="details" label="Details" component={this.renderInput} />
-                        <div className="row justify-content-end">
+                        <div className="row justify-content-center">
                             <button onClick={this.props.reset} type='button' className='btn btn-outline-danger mr-3'>Reset</button>
                             <button className='btn btn-outline-success mr-3' >Add item</button>
                             <Link className="btn btn-outline-primary mr-3" to="/">Go Back</Link>
