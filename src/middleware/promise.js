@@ -3,14 +3,15 @@ export default store => next => action => {
         return next(action);
     }
 
-    action.payload.then(resp => {
+    action.payload.then((resp) => {
         const newAction = {
             ...action,
             payload: resp
         };
+        console.log("payload", newAction);
 
         store.dispatch(newAction);
     });
 
     return action.payload;
-}
+};

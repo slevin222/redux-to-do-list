@@ -19,17 +19,15 @@ class Home extends Component {
             );
         });
 
-
         return (
-            <div>
-
+            <div className="col-md-7 offset-md-2">
                 <div className="text-center">
                     <h1>To Do List</h1>
-                    <p>Now with Redux!</p>
                 </div>
-                <div className="row justify-content-end my-4">
+                <div className="row justify-content-center">
                     <Link className="btn btn-outline-primary" to="/add-item">Add Item</Link>
                 </div>
+                <br />
                 <ul className="row list-group">
                     {listItems}
                 </ul>
